@@ -2,32 +2,27 @@ class Person {
     name;
     constructor(name){
         this.name = name;
-        this.age = 22;
     }
     getInformation() {
         console.log(`This person is ${this.name}`);
     }
-    getAge() {
-        console.log(`This person was ${this.age} age`);
-    }
+    
 }
 
 
 class Professor extends Person {
-    constructor( name, teaches, kelas){
+    constructor( name, teaches,){
         super(name);
         this.teaches = teaches;
-        this.kelas = kelas;
     }
     introduceSelf() {
         console.log(
             `My Name is ${this.name}, and i will be your ${this.teaches} Professor`
         );
     }
-    getClass(){
-        console.log(
-            `I'll be in ${this.kelas} today.`
-        );
+    grade(paper){
+        const grade  = Math.floor(Math.random() * (5-1)+1);
+        console.log(grade);
     }
 }
 
@@ -41,5 +36,3 @@ class Professor extends Person {
 const ema = new Professor ("ema", "Math", "SIB5B");
 console.log(ema.getInformation());
 console.log(ema.introduceSelf());
-console.log(ema.getAge());
-console.log(ema.getClass());
